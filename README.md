@@ -133,7 +133,8 @@ Stop the running server with `Ctrl + C` before starting another server on the sa
 ## Screenshots
 
 ### GET / — Home Route
-![Home route](screenshots/home.png)
+![Home route]<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/54bcf571-e444-4c61-aa75-b27e88744744" />
+
 
 ### GET /about — About Route
 ![About route](screenshots/about.png)
