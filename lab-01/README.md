@@ -3,32 +3,28 @@
 ## Student Details
 
 - **Name:** Reddi Leela Syamala
-- **Registration Number:** [Registration Number]
+- **Registration Number:** 252U1R3078
 - **Section:** CSE(DS)-2B
+- **Faculty:** Mr Yugandhar Gurjalwar
 - **Course:** Backend Development Fundamentals
 - **Lab Number:** 01
+- **GitHub Repository:** [https://github.com/reddileelasyamala-creator/Lab-1](https://github.com/reddileelasyamala-creator/Lab-1)
 
 ## Live Link
 
-- **Deployment Status:** Local / Deployment Pending
-- **Reason:** Deployment credentials or hosting platform integration was not configured. The application is fully prepared for cloud deployment (supports `process.env.PORT || 3000`).
-- **To Deploy (e.g. Render / Vercel / Railway):**
-  1. Push this repository to GitHub.
-  2. Connect your GitHub repository to your hosting service (e.g., Render Web Service or Vercel).
-  3. Set Root Directory to `lab-01`.
-  4. Set Build Command to `npm install` and Start Command to `node server.js` (or `npm start`).
+Deployment is currently unavailable. This application requires a persistent Node.js runtime (e.g., Render, Railway, or Cyclic). Static hosting platforms such as GitHub Pages or Vercel's static tier cannot run a continuous Node.js/Express server. Deployment steps are listed at the end of this file.
 
 ## Objective
 
-To set up a Node.js project using `npm init -y`, install Express.js, create a basic HTTP server using Node.js's built-in `http` module, and build an Express.js server with multiple endpoints, appropriate HTTP status codes, and error handling for unknown routes.
+To set up a Node.js project, create a basic HTTP server using the built-in `http` module, and build an Express server with multiple routes and appropriate HTTP status codes.
 
 ## Technologies Used
 
-- **Node.js** (v24.15.0)
-- **Express.js** (v5.3.0)
-- **JavaScript (CommonJS)**
-- **npm** (v11.12.1)
-- **Visual Studio Code**
+- Node.js
+- Express.js
+- JavaScript
+- npm
+- Visual Studio Code
 
 ## Project Structure
 
@@ -47,38 +43,28 @@ lab-01/
 └── README.md
 ```
 
-## Explanation of `package.json` Fields
+## package.json Fields Explained
 
-The `package.json` file serves as the manifest for the Node.js project. Key fields include:
-
-- **`name`**: The identifier/name of the project (`"lab-01"`).
-- **`version`**: The current semantic version of the application (`"1.0.0"`).
-- **`description`**: A brief summary describing the project's purpose.
-- **`main`**: The entry point file of the application (`"server.js"`).
-- **`scripts`**: Command shortcuts executed via `npm run <script-name>`:
-  - `"start"`: Runs `node server.js` to start the Express application.
-  - `"start:http"`: Runs `node server-http.js` to launch the built-in HTTP server.
-  - `"test"`: Placeholder script for automated tests.
-- **`dependencies`**: Lists external third-party libraries required for runtime execution (e.g., `"express": "^5.3.0"`).
-- **`license`**: The software license governing the project (`"ISC"`).
-- **`type`**: Module system used by Node.js (`"commonjs"`).
+| Field | Description |
+|---|---|
+| `name` | The name of the project (`lab-01`). Must be lowercase and URL-safe. |
+| `version` | The current version of the project (`1.0.0`). Follows semantic versioning. |
+| `main` | The entry point file of the project (`server.js`). |
+| `scripts` | Shortcuts for npm commands. `start` runs `node server.js`. `start:http` runs `node server-http.js`. `test` is a placeholder. |
+| `dependencies` | Lists packages the project needs to run — here, `express`. |
+| `license` | The license type for the project (`ISC`). |
 
 ## Installation and Setup
 
 ### Prerequisites
 
-- Node.js (v18+ recommended) and npm installed
-- Terminal / Command Prompt or Visual Studio Code
+- Node.js and npm installed
+- Visual Studio Code or another code editor
 
 ### Steps to Run
 
-1. Clone or download the repository.
-2. Open the terminal and navigate into the `lab-01` directory:
-
-   ```bash
-   cd lab-01
-   ```
-
+1. Clone the repository or download the project.
+2. Open the `lab-01` folder in the terminal.
 3. Install the dependencies:
 
    ```bash
@@ -91,91 +77,116 @@ The `package.json` file serves as the manifest for the Node.js project. Key fiel
    node server.js
    ```
 
-   *(Alternatively, run `npm start`)*
-
-5. Open your web browser or API client at:
+5. Open the following URL in your browser:
 
    `http://localhost:3000`
 
 ### How to Run the Basic HTTP Server
 
-To test the basic HTTP server built with Node.js's core `http` module:
+To run the server implemented using Node.js's built-in HTTP module:
 
-1. Stop any server currently running on port 3000 (`Ctrl + C`).
-2. Run:
+```bash
+node server-http.js
+```
 
-   ```bash
-   node server-http.js
-   ```
-
-   *(Alternatively, run `npm run start:http`)*
-
-3. Visit `http://localhost:3000` to verify the plain-text response: `Hello`.
-
-> **Note:** Stop the running server before starting another server on the same port.
+Stop the running server with `Ctrl + C` before starting another server on the same port.
 
 ## Endpoints
 
 | Method | Endpoint | Description | Expected Status |
 |---|---|---|---|
-| GET | `/` | Returns a welcome message | 200 OK |
-| GET | `/about` | Returns student name and section in JSON | 200 OK |
-| GET | `/time` | Returns the current date and time | 200 OK |
-| GET | `/anything` | Demonstrates the response for an unknown route | 404 Not Found |
+| GET | `/` | Welcome message | 200 OK |
+| GET | `/about` | Student name and section in JSON | 200 OK |
+| GET | `/time` | Current date and time | 200 OK |
+| GET | `/anything` | Unknown route demonstration | 404 Not Found |
 
-> **Note on Unknown Routes:** `/anything` is an illustrative example of an undefined route. Any other undefined path (e.g., `/test`, `/random`, `/users`) will also be handled by the catch-all middleware and return HTTP status `404 Not Found` with the body `404 - Page Not Found`.
+> **Note:** `/anything` is an example route demonstrating 404 handling. All other undefined routes (such as `/hello`, `/test`, `/unknown-path`) also return `404 Not Found`.
+
+### Route Testing and Expected Results
+
+1. **GET `/`**
+   - **How to test:** Open `http://localhost:3000/` in a browser or run `curl http://localhost:3000/`
+   - **Expected Status:** `200 OK`
+   - **Expected Result:** `Welcome to my Lab 1 server!`
+
+2. **GET `/about`**
+   - **How to test:** Open `http://localhost:3000/about` in a browser or run `curl http://localhost:3000/about`
+   - **Expected Status:** `200 OK`
+   - **Expected Result:** JSON object containing student name and section:
+     ```json
+     {
+       "name": "Reddi Leela Syamala",
+       "section": "CSE(DS)-2B"
+     }
+     ```
+
+3. **GET `/time`**
+   - **How to test:** Open `http://localhost:3000/time` in a browser or run `curl http://localhost:3000/time`
+   - **Expected Status:** `200 OK`
+   - **Expected Result:** `Current Date and Time: <current-system-date-time>`
+
+4. **GET `/anything` (or any undefined route)**
+   - **How to test:** Open `http://localhost:3000/anything` or `http://localhost:3000/unknown-path` in a browser
+   - **Expected Status:** `404 Not Found`
+   - **Expected Result:** `404 - Page Not Found`
 
 ## Screenshots
 
-### 1. Home Route (`GET /`)
-Displays the welcome message with HTTP status `200 OK`.
-
+### GET / — Home Route
 ![Home route](screenshots/home.png)
 
-### 2. About Route (`GET /about`)
-Displays the student's name and section in JSON format with HTTP status `200 OK`.
-
+### GET /about — About Route
 ![About route](screenshots/about.png)
 
-### 3. Time Route (`GET /time`)
-Displays the current system date and time generated via `new Date()` with HTTP status `200 OK`.
-
+### GET /time — Time Route
 ![Time route](screenshots/time.png)
 
-### 4. Unknown Route (`GET /anything`)
-Displays the `404 - Page Not Found` message with HTTP status `404 Not Found`.
-
-![Unknown route](screenshots/not-found.png)
+### Unknown Route — 404 Not Found
+![Not Found route](screenshots/not-found.png)
 
 ## HTTP Status Codes
 
-- **`200 OK`**: Standard response for successful HTTP requests. Returned by `/`, `/about`, and `/time`.
-- **`404 Not Found`**: The server cannot find the requested resource or route. Returned for all undefined paths.
+| Status Code | Meaning | Used In |
+|---|---|---|
+| 200 OK | The request was successful | `/`, `/about`, `/time` |
+| 404 Not Found | The requested resource does not exist | All undefined routes |
 
 ## Viva Questions and Answers
 
-### 1. What is the difference between `package.json` and `node_modules`?
-- **`package.json`**: A lightweight JSON metadata file tracked by version control that documents project details, configuration, start scripts, and dependencies (with version ranges).
-- **`node_modules`**: The physical directory containing the installed JavaScript packages and their transitive dependencies downloaded by npm. It is bulky and should never be committed to Git (always ignored via `.gitignore`).
+**Q1. What is the difference between `package.json` and `node_modules`?**
 
-### 2. What does `app.listen()` do?
-`app.listen()` binds and listens for incoming HTTP connections on the specified network port and host. It initializes the underlying Node.js HTTP server and makes the Express application available to handle incoming client requests.
+`package.json` is a configuration file that lists the project's metadata and its dependencies (the packages it needs). `node_modules` is the actual folder where npm downloads and stores those packages locally. You share `package.json` with others so they can run `npm install` to recreate `node_modules` on their machine. You never commit `node_modules` to Git because it is large and can always be regenerated.
 
-### 3. What do request and response represent?
-- **`request` (`req`)**: An object representing the incoming HTTP request from the client. It contains request headers, query parameters, URL path, HTTP method, and body data.
-- **`response` (`res`)**: An object used by the server to construct and send back the HTTP response to the client, including HTTP status codes, response headers, and payload (plain text, JSON, or HTML).
+**Q2. What does `app.listen()` do?**
+
+`app.listen(PORT, callback)` starts the Express server and tells it to listen for incoming HTTP requests on the specified port number. The optional callback function runs once the server is up and ready, usually to print a confirmation message to the terminal.
+
+**Q3. What do request and response represent?**
+
+In Express route handlers, `request` (often written as `req`) is an object that contains all the information about the incoming HTTP request — such as the URL, HTTP method, headers, and any data sent by the client. `response` (often written as `res`) is an object used to send a reply back to the client — including the status code, headers, and the response body.
 
 ## Problems Faced and Solutions
 
-1. **Port 3000 Collision (`EADDRINUSE`)**:
-   - *Problem:* Running `server.js` while `server-http.js` was still active caused a port conflict error because both servers default to port 3000.
-   - *Solution:* Ensured that the previous process was terminated (`Ctrl + C` or process kill) before launching the alternate server implementation. Added `process.env.PORT || 3000` to allow flexible port assignment.
-2. **Actual 404 Status vs Default 200 Response**:
-   - *Problem:* A simple handler returning text without explicitly setting `res.status(404)` returns HTTP 200 OK by default, which is semantically incorrect for missing pages.
-   - *Solution:* Implemented `response.status(404).send("404 - Page Not Found")` in Express catch-all middleware to send both the correct HTTP 404 status header and a descriptive error message.
+| Problem | Solution |
+|---|---|
+| Both `server-http.js` and `server.js` use port 3000 — running both at the same time causes "port already in use" error. | Stop the first server with `Ctrl + C` before starting the second one. |
 
 ## Git and Repository Notes
 
-- The `.gitignore` file explicitly ignores `node_modules/` and `.env`.
-- Screenshots are stored under `screenshots/` and referenced via relative markdown paths.
-- The project is cleanly structured for submission through the course repository.
+- **Repository:** [https://github.com/reddileelasyamala-creator/Lab-1](https://github.com/reddileelasyamala-creator/Lab-1)
+- `node_modules/` is excluded via `.gitignore` and must never be committed.
+- `.env` is excluded via `.gitignore` to prevent accidental exposure of secrets.
+- Run `npm install` after cloning to restore dependencies.
+- Do not force-push or overwrite existing Git history.
+
+## Deployment Steps (Manual — Not Yet Completed)
+
+To deploy this application on **Render** (free tier):
+
+1. Push the project to a GitHub repository.
+2. Go to [https://render.com](https://render.com) and create a new **Web Service**.
+3. Connect the GitHub repository.
+4. Set the build command to `npm install`.
+5. Set the start command to `node server.js`.
+6. Render will assign a port automatically via the `PORT` environment variable, which `server.js` already handles dynamically with `const PORT = process.env.PORT || 3000;`.
+7. Once deployed, Render provides a live URL.
