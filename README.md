@@ -137,13 +137,16 @@ Stop the running server with `Ctrl + C` before starting another server on the sa
 
 
 ### GET /about — About Route
-![About route](screenshots/about.png)
+![About route]<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/80551334-c43f-4c30-95ee-d33fb2db65fb" />
+
 
 ### GET /time — Time Route
-![Time route](screenshots/time.png)
+![Time route]<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/bfc414fb-3cca-442c-b67e-fafa17f1ecfd" />
+
 
 ### Unknown Route — 404 Not Found
-![Not Found route](screenshots/not-found.png)
+![Not Found route]<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/938466dd-5605-48d4-8dff-4c2ee5e1ba47" />
+
 
 ## HTTP Status Codes
 
