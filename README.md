@@ -7,7 +7,7 @@ Comprehensive laboratory experiments, implementations, and documentation for the
 ## Student Information
 
 - **Student Name:** Reddi Leela Syamala
-- **Registration Number:** [Registration Number]
+- **Registration Number:** 252U1R3078
 - **Branch / Section:** CSE(DS)-2B
 - **Institution:** Aurora
 - **Course:** Backend Development Fundamentals (Year II Term II)
