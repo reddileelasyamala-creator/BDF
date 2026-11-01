@@ -1,10 +1,17 @@
-# Lab 2: SQLite database and CRUD routes
+# Lab 2: Node.js and Express Server
 
-**Reddi Leela Syamala** · **252U1R3078** · **S21**
+## Student Details
+
+- **Name:** Reddi Leela Syamala
+- **Registration Number:** 252U1R3078
+- **Section:** CSE(DS)-2B
+- **Faculty:** Mr Yugandhar Gurjalwar
+- **Course:** Backend Development Fundamentals
+- **Lab Number:** 02
 
 ## Live Link
 
-Deployment is currently unavailable for local evaluation. SQLite stores data in a local file (`books.db`), meaning deployments to free cloud container tiers (such as Render or Railway) with ephemeral filesystems would wipe database mutations on every container restart. For persistent cloud hosting, an attached volume or managed database is required. Complete Postman screenshots demonstrating the functionality of all endpoints are provided below in accordance with submission guideline S3.
+
 
 ---
 
