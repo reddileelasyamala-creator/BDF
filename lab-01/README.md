@@ -12,7 +12,7 @@
 
 ## Live Link
 
-Deployment is currently unavailable. This application requires a persistent Node.js runtime (e.g., Render, Railway, or Cyclic). Static hosting platforms such as GitHub Pages or Vercel's static tier cannot run a continuous Node.js/Express server. Deployment steps are listed at the end of this file.
+https://bdf-lab-01-vlbf.onrender.com 
 
 ## Objective
 
