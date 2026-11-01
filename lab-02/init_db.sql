@@ -17,3 +17,4 @@ INSERT INTO book (id, title, author, price, pages) VALUES
   (8, 'Jane Eyre', 'Charlotte Bronte', 310, 500),
   (9, 'Animal Farm', 'George Orwell', 199, 112),
   (10, 'Brave New World', 'Aldous Huxley', 340, 268);
+

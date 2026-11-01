@@ -95,3 +95,4 @@ npm start
 5. **Inserting Seed Data via SQLite CLI Shell**:
    - *Problem:* Requirement T2 explicitly mandated inserting 8–10 rows through the SQLite CLI shell rather than using a Node.js seed script.
    - *Solution:* Authored `init_db.sql` with table definitions and 10 realistic book records, executed it directly in the CLI using `sqlite3 books.db ".read init_db.sql"`, and verified the schema and records using `SELECT * FROM book;`.
+
