@@ -8,7 +8,7 @@
 - **Faculty:** Mr Yugandhar Gurjalwar
 - **Course:** Backend Development Fundamentals
 - **Lab Number:** 03
-- **GitHub Repository:** [https://github.com/reddileelasyamala-creator/Lab-1](https://github.com/reddileelasyamala-creator/Lab-1)
+- **GitHub Repository:** [https://github.com/reddileelasyamala-creator/Lab-1](https://github.com/reddileelasyamala-creator/Lab-3)
 
 ---
 Live link: https://bdf-lab-3-3yxi.onrender.com 
