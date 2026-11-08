@@ -1,0 +1,29 @@
+{
+  "name": "lab-03",
+  "version": "1.0.0",
+  "description": "Lab 3: RESTful API Development, Query Parameters, Validation and Debugging",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "npm rebuild sqlite3 --build-from-source"
+  },
+  "keywords": [
+    "express",
+    "sqlite",
+    "rest-api",
+    "query-parameters",
+    "validation"
+  ],
+  "author": "Reddi Leela Syamala",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.3.0",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
+
