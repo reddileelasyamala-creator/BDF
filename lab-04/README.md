@@ -6,7 +6,7 @@
 - **Name:** Reddi Leela Syamala
 - **Registration Number:** 252U1R3078
 - **Section:** CSE(DS)-2B
-- **Faculty:** Joel Prashanth D
+- **Faculty:** Mr Yugandhar Gurjalwar
 - **Course:** Backend Development Fundamentals
 - **Lab Number:** 04
 - **Repository:** [https://github.com/reddileelasyamala-creator/BDF/tree/main/lab-04](https://github.com/reddileelasyamala-creator/BDF/tree/main/lab-04)
