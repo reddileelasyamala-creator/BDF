@@ -1,0 +1,236 @@
+{
+  "info": {
+    "name": "Lab 04 - Registration, Login and JWT",
+    "_postman_id": "lab04-registration-login-jwt-collection",
+    "description": "Postman Collection for Lab 04 - User Registration, Login and JWT Authentication.\nStudent: Reddi Leela Syamala (252U1R3078)\nCourse: Backend Development Fundamentals\nFaculty: Joel Prashanth D",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Registration",
+      "item": [
+        {
+          "name": "1. Register a valid new user - 201 Created",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"leela123\",\n  \"name\": \"Leela Syamala\",\n  \"password\": \"SecurePass123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/register/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["register", ""]
+            },
+            "description": "Registers a new user with valid username, name, and password. Password is automatically hashed using bcrypt."
+          }
+        },
+        {
+          "name": "2. Register the same username again - 400 Bad Request",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"leela123\",\n  \"name\": \"Leela Syamala\",\n  \"password\": \"SecurePass123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/register/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["register", ""]
+            },
+            "description": "Rejects registration when attempting to register an already existing username."
+          }
+        },
+        {
+          "name": "3. Register with missing username - 400 Bad Request",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Leela Syamala\",\n  \"password\": \"SecurePass123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/register/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["register", ""]
+            },
+            "description": "Validates request payload and rejects registration with missing username."
+          }
+        },
+        {
+          "name": "4. Register with missing name - 400 Bad Request",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"leela456\",\n  \"password\": \"SecurePass123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/register/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["register", ""]
+            },
+            "description": "Validates request payload and rejects registration with missing name."
+          }
+        },
+        {
+          "name": "5. Register with missing password - 400 Bad Request",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"leela789\",\n  \"name\": \"Leela Syamala\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/register/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["register", ""]
+            },
+            "description": "Validates request payload and rejects registration with missing password."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Login",
+      "item": [
+        {
+          "name": "6. Login with correct username and password - 200 OK",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"leela123\",\n  \"password\": \"SecurePass123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/login/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["login", ""]
+            },
+            "description": "Verifies correct credentials with bcrypt.compare() and returns a signed JWT token."
+          }
+        },
+        {
+          "name": "7. Login with an unknown username - 400 Bad Request",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"unknownuser999\",\n  \"password\": \"SecurePass123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/login/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["login", ""]
+            },
+            "description": "Rejects login attempt when the username does not exist in SQLite database."
+          }
+        },
+        {
+          "name": "8. Login with an incorrect password - 400 Bad Request",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"leela123\",\n  \"password\": \"WrongPassword999\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/login/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["login", ""]
+            },
+            "description": "Rejects login attempt when supplied password does not match stored bcrypt hash."
+          }
+        },
+        {
+          "name": "9. Login with missing credentials - 400 Bad Request",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"leela123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/login/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["login", ""]
+            },
+            "description": "Rejects login request when required fields are missing from request body."
+          }
+        }
+      ]
+    }
+  ]
+}

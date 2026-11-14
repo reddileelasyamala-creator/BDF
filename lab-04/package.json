@@ -1,0 +1,31 @@
+{
+  "name": "lab-04",
+  "version": "1.0.0",
+  "description": "Lab 4: Registration, Login and JWT Authentication",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "express",
+    "sqlite",
+    "bcrypt",
+    "jwt",
+    "authentication",
+    "login",
+    "registration"
+  ],
+  "author": "Reddi Leela Syamala",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
