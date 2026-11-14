@@ -11,7 +11,12 @@
  * Perfect for viva demonstration and code defense!
  */
 
-const bcrypt = require("bcrypt");
+let bcrypt;
+try {
+  bcrypt = require("bcrypt");
+} catch (err) {
+  bcrypt = require("bcryptjs");
+}
 const jwt = require("jsonwebtoken");
 
 const JWT_SECRET = process.env.JWT_SECRET || "MY_SECRET_TOKEN_KEY_LAB_04";

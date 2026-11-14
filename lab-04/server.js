@@ -3,7 +3,16 @@ const path = require("path");
 const fs = require("fs");
 const { open } = require("sqlite");
 const sqlite3 = require("sqlite3");
-const bcrypt = require("bcrypt");
+let bcrypt;
+try {
+  bcrypt = require("bcrypt");
+} catch (err) {
+  try {
+    bcrypt = require("bcryptjs");
+  } catch (fallbackErr) {
+    throw err;
+  }
+}
 const jwt = require("jsonwebtoken");
 
 const app = express();
