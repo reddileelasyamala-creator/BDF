@@ -1,11 +1,4 @@
 # Lab 4: Registration, Login and JWT Authentication
-
-[![Node.js](https://img.shields.io/badge/Node.js-v24.x-green.svg)](https://nodejs.org/)
-[![Express.js](https://img.shields.io/badge/Express.js-v5.3.0-lightgrey.svg)](https://expressjs.com/)
-[![SQLite3](https://img.shields.io/badge/SQLite-v3-blue.svg)](https://www.sqlite.org/)
-[![JWT](https://img.shields.io/badge/JWT-jsonwebtoken_v9-orange.svg)](https://jwt.io/)
-[![bcrypt](https://img.shields.io/badge/Security-bcrypt_v5-red.svg)](https://github.com/kelektiv/node.bcrypt.js)
-
 ---
 
 ## Student Details
@@ -16,9 +9,8 @@
 - **Faculty:** Joel Prashanth D
 - **Course:** Backend Development Fundamentals
 - **Lab Number:** 04
-- **Repository:** [https://github.com/reddileelasyamala-creator/BDF](https://github.com/reddileelasyamala-creator/BDF)
-- **Lab Directory:** [https://github.com/reddileelasyamala-creator/BDF/tree/main/lab-04](https://github.com/reddileelasyamala-creator/BDF/tree/main/lab-04)
-- **Live Render Deployment:** [https://bdf-lab-04.onrender.com](https://bdf-lab-04.onrender.com) *(Configured Web Service)*
+- **Repository:** [https://github.com/reddileelasyamala-creator/BDF/tree/main/lab-04](https://github.com/reddileelasyamala-creator/BDF/tree/main/lab-04)
+- **Live Render Deployment:** [https://bdf-lab-04.onrender.com](https://bdf-4.onrender.com)
 
 ---
 
